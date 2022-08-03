@@ -5,13 +5,17 @@ use App\Http\Livewire\dashinsertar;
 use App\Http\Livewire\nuevoProyecto;
 use App\Http\Livewire\nuevoModulo;
 use App\Http\Livewire\Tabla\Proyectou;
-
-use App\Http\Livewire\nuevoActividad;
-use App\Http\Livewire\NuevoHistoriaUsuario;
-use App\Http\Livewire\nuevoProceso;
-use App\Http\Livewire\nuevoSolicitud;
-use App\Http\Livewire\nuevoTipoSolicitud;
-use App\Http\Livewire\nuevoParametro;
+//CRUDS
+    //nuevos
+        use App\Http\Livewire\nuevoActividad;
+        use App\Http\Livewire\NuevoHistoriaUsuario;
+        use App\Http\Livewire\nuevoProceso;
+        use App\Http\Livewire\nuevoSolicitud;
+        use App\Http\Livewire\nuevoTipoSolicitud;
+        use App\Http\Livewire\nuevoParametro;
+    //editar
+        use App\Http\Livewire\editar\EditModulo;
+        use App\Http\Livewire\editar\EditProyecto;
 
 Route::get('/', function () {
     return view('welcome');
@@ -41,6 +45,10 @@ Route::get('nuevoProceso', nuevoProceso::class)->name('nuevoProceso');
 Route::get('nuevoSolicitud', nuevoSolicitud::class)->name('nuevoSolicitud');
 Route::get('nuevoTipoSolicitud', nuevoTipoSolicitud::class)->name('nuevoTipoSolicitud');
 Route::get('nuevoParametro', nuevoParametro::class)->name('nuevoParametro');
+
+//edit
+Route::get('EditModulo/{id_a}', EditModulo::class)->name('EditModulo');
+Route::get('EditProyecto/{id_a}', EditProyecto::class)->name('EditProyecto');
     
 });
 

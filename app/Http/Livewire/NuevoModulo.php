@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Actividad;
 use App\Models\Proyecto;
 use App\Models\Modulo;
 
@@ -13,10 +14,18 @@ class NuevoModulo extends Component
     public $nombre;
     public $proyecto_id;
     public $proyectos;
+    //edicion
+    public $listaModulos;
+
+
 
     public function mount (){
         $this->nombre_clase = "Modulo";
         $this->proyectos = Proyecto::all();
+
+        $this->listaModulos = Modulo::all();
+        // $this->listaModulos = Modulo::has('Actividad')->get();
+        
     }
 
     protected $rules = [
@@ -35,6 +44,9 @@ class NuevoModulo extends Component
 
     public function render()
     {
+        foreach ($this->listaModulos as $key => $value) {
+            $value->actividades = Actividad::where('modulo_id', $value->id)->get();
+        }
         return view('livewire.nuevo-modulo');
     }
 }

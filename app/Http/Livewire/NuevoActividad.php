@@ -23,7 +23,7 @@ class NuevoActividad extends Component
     public $proceso;
 
     public function mount (){
-        $this->claseInput = "relative m-4 sm:w-1/2 xl:w-1/3 w-2/4  text-left";
+        $this->claseInput = "relative m-4 w-full text-left";
         $this->nombre_clase = "Actividad";
         $this->modulo = modulo::all();
         $this->historia_usuarios = HistoriaUsuario::all();

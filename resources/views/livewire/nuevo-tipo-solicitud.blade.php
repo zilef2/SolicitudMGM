@@ -20,7 +20,6 @@
                     </button>
                 </div>
                 <p class="text-sm mt-2 text-gray-500 mb-8 w-full"></p>
-
             </div>
         </div>
     </section>

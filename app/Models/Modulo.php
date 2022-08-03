@@ -13,4 +13,6 @@ class Modulo extends Model
         'nombre',
         'proyecto_id'
     ];
+
+    // hasmany
 }

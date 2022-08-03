@@ -17,6 +17,7 @@ class NuevoTipoSolicitud extends Component
     public $collection;
     
     public $claseInput;
+
     
 
     public function nombre() { return get_class($this); }
