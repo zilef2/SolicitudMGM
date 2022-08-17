@@ -23,7 +23,6 @@ Route::get('/', function () {
 
 
 Route::get('/dashboard', function () {
-    // $session()->flash('flash.banner', 'Yay it works!');
     return view('dashboard');
 
 })->middleware(['auth'])->name('dashboard');
@@ -35,24 +34,8 @@ Route::group(['prefix'=>"us"],function () {
     Route::get('dashinsertar', dashinsertar::class)->name('dashinsertar');
     Route::get('nuevoProyecto', nuevoProyecto::class)->name('nuevoProyecto');
     Route::get('nuevoModulo', nuevoModulo::class)->name('nuevoModulo');
-    Route::get('proyectou', proyectou::class)->name('proyectou');
-
-
-    
-Route::get('nuevoActividad', nuevoActividad::class)->name('nuevoActividad');
-Route::get('nuevoHistoriaUsuario', NuevoHistoriaUsuario::class)->name('nuevoHistoriaUsuario');
-Route::get('nuevoProceso', nuevoProceso::class)->name('nuevoProceso');
-Route::get('nuevoSolicitud', nuevoSolicitud::class)->name('nuevoSolicitud');
-Route::get('nuevoTipoSolicitud', nuevoTipoSolicitud::class)->name('nuevoTipoSolicitud');
-Route::get('nuevoParametro', nuevoParametro::class)->name('nuevoParametro');
-
-//edit
-Route::get('EditModulo/{id_a}', EditModulo::class)->name('EditModulo');
-Route::get('EditProyecto/{id_a}', EditProyecto::class)->name('EditProyecto');
     
 });
-
-
 
 
 // <editor-fold desc="Artisan">
