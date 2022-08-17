@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Solicitud extends Model
+class Estado_rfc extends Model
 {
     use HasFactory;
 
     protected $fillable = [
         'nombre',
-        'fecha',
-        'actividad_id',
     ];
 }

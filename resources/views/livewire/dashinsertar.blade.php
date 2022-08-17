@@ -20,7 +20,6 @@
                         </a>
                     </div>
                 @endforeach
-
             </div>
             <div class="flex items-center">
                 <a href="{{route('dashboard')}}" type="button" class="inline-flex mx-auto mt-16 text-lg ml-4 text-white bg-black font-bold py-2 px-2 rounded
@@ -31,8 +30,6 @@
                     {{ __('Atrás') }}
                 </a>
             </div>
-
-            
         </div>
 
         <section class="text-gray-600 body-font">

@@ -5,7 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Modulo extends Model
+class Tipo_modulo extends Model
 {
     use HasFactory;
+
+    protected $fillable = [
+        'nombre',
+    ];
 }

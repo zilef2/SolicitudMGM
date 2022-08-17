@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class HistoriaUsuario extends Model
+class Tipo_cambio_rfc extends Model
 {
     use HasFactory;
 

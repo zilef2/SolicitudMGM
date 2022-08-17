@@ -29,12 +29,13 @@ Route::get('/dashboard', function () {
 
 require __DIR__.'/auth.php';
 
-
+Route::group(['middleware' => ['auth']], function () { 
 Route::group(['prefix'=>"us"],function () {
     Route::get('dashinsertar', dashinsertar::class)->name('dashinsertar');
     Route::get('nuevoProyecto', nuevoProyecto::class)->name('nuevoProyecto');
     Route::get('nuevoModulo', nuevoModulo::class)->name('nuevoModulo');
     
+});
 });
 
 

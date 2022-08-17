@@ -4,7 +4,7 @@
             <div class="w-full md:w-2/3 flex flex-col mb-16 items-center text-center">
                 <h1 class="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">Nuevo {{ $nombre_clase }}</h1>
                 <p class="mb-8 leading-relaxed"></p>
-                <div class="flex w-full justify-center items-end">
+                <div class="grid grid-cols-3 w-full justify-center items-end gap-6">
 
                     <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
                         <label for="nombre" class="leading-7 text-sm text-gray-600">Nombre</label>
@@ -20,9 +20,38 @@
                             @endforeach
                         </select>
                     </div>
+
+                    <div class="relative mr-4 lg:w-full xl:w-1/2 w-2/4 md:w-full text-left">
+                        <select wire:model.defer="_id" id="_id"
+                            class="mt-1 block w-full py-2 px-3 border border-gray-300 bg-white rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm">
+                                <option value="-1" selected>Seleccione el  al que pertenecerá...</option>
+                                    @foreach ($s as i => $gen)
+                                <option value="{{ $gen->id }}">{{ $gen->nombre }}</option>
+                            @endforeach
+                        </select>
+                    </div>
+
+                </div>
+                <div class="grid grid-cols-3 w-full justify-center items-end gap-2">
+                    <div class="flex items-center">
+                        <a href="{{route('dashinsertar')}}" type="button" class="w-2/3 inline-flex mx-auto mt-16 text-lg ml-4 text-white bg-indigo-500 font-bold py-2 px-2 rounded
+                            transition duration-500 ease-in-out hover:bg-red-600 transform hover:-translate-y-1 hover:scale-110">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4 mt-1 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0019 16V8a1 1 0 00-1.6-.8l-5.333 4zM4.066 11.2a1 1 0 000 1.6l5.334 4A1 1 0 0011 16V8a1 1 0 00-1.6-.8l-5.334 4z" />
+                            </svg>
+                            {{ __('Atrás') }}
+                        </a>
+                    </div>
+
                     <button wire:click="savepro"
-                        class="inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
-                        Guardar</button>
+                        class="w-1/2 inline-flex text-white bg-indigo-500 border-0 py-2 px-6 focus:outline-none hover:bg-indigo-600 rounded text-lg">
+                        Guardar
+                    </button>
+                    <a href="{{route('dashinsertar')}}"
+                        class="inline-flex text-indigo-600 border-0 py-2 px-6 focus:outline-none rounded text-lg">
+                        Registrar nuevo proyecto
+                    </a>
+                    
                 </div>
             </div>
         </div>
